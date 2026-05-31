@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abuzaidkhan Jan Seva Kendra | GST • Income Tax • CSC Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #D4A017; --gold2: #F0C030; --dark: #0A0F1C;
+  --dark2: #111827; --dark3: #1E2A3A; --blue: #1A6EBF;
+  --blue2: #2589E8; --teal: #0D9488; --white: #F8FAFC;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Baloo 2','Noto Sans Devanagari',sans-serif;background:var(--dark);color:var(--white);overflow-x:hidden;}
+#starfield{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2rem;background:rgba(10,15,28,0.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(212,160,23,0.2);display:flex;align-items:center;justify-content:space-between;height:68px;}
+.logo{display:flex;align-items:center;gap:12px;}
+.logo-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--gold),var(--blue2));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:#fff;box-shadow:0 0 20px rgba(212,160,23,0.4);}
+.logo-text{font-size:1.15rem;font-weight:800;line-height:1.2;}
+.logo-text span{color:var(--gold);}
+.logo-text small{display:block;font-size:0.67rem;color:#94A3B8;font-weight:400;letter-spacing:1px;}
+.nav-links{display:flex;gap:2rem;}
+.nav-links a{color:#CBD5E1;text-decoration:none;font-size:0.9rem;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{background:linear-gradient(90deg,var(--gold),#B8860B);color:var(--dark);padding:9px 22px;border-radius:8px;font-weight:800;font-size:0.88rem;cursor:pointer;border:none;box-shadow:0 4px 16px rgba(212,160,23,0.35);transition:all 0.25s;}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,160,23,0.55);}
+
+/* TICKER */
+.ticker{overflow:hidden;background:rgba(212,160,23,0.1);border-top:1px solid rgba(212,160,23,0.25);border-bottom:1px solid rgba(212,160,23,0.25);padding:10px 0;white-space:nowrap;margin-top:68px;}
+.ticker-inner{display:inline-block;animation:tick 32s linear infinite;font-size:0.84rem;font-weight:600;color:var(--gold2);}
+@keyframes tick{0%{transform:translateX(100vw);}100%{transform:translateX(-100%);}}
+
+/* HERO */
+.hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 2rem 4rem;}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.35);color:var(--gold2);padding:6px 20px;border-radius:50px;font-size:0.8rem;font-weight:700;letter-spacing:1px;margin-bottom:1.6rem;animation:pulsebadge 2.2s ease-in-out infinite;}
+@keyframes pulsebadge{0%,100%{box-shadow:0 0 0 0 rgba(212,160,23,0.3);}50%{box-shadow:0 0 0 10px rgba(212,160,23,0);}}
+.hero h1{font-size:clamp(2.5rem,6vw,4.8rem);font-weight:800;line-height:1.1;margin-bottom:1rem;}
+.hero h1 .line1{background:linear-gradient(135deg,#fff 0%,var(--gold2) 60%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero h1 .line2{background:linear-gradient(135deg,var(--blue2) 0%,var(--gold2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-sub{font-size:clamp(1rem,2vw,1.2rem);color:#94A3B8;max-width:620px;margin:0 auto 2.5rem;line-height:1.75;}
+.hero-sub strong{color:var(--white);}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
+.btn-gold{background:linear-gradient(135deg,var(--gold),#B8860B);color:var(--dark);padding:14px 34px;border-radius:10px;font-weight:800;font-size:1rem;border:none;cursor:pointer;box-shadow:0 6px 24px rgba(212,160,23,0.4);transition:all 0.3s;text-decoration:none;display:inline-block;}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(212,160,23,0.6);}
+.btn-ghost{background:transparent;color:var(--white);padding:14px 34px;border-radius:10px;font-weight:700;font-size:1rem;border:1.5px solid rgba(255,255,255,0.22);cursor:pointer;transition:all 0.3s;text-decoration:none;display:inline-block;}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);background:rgba(212,160,23,0.07);}
+.stats{display:flex;gap:1.5rem;margin-top:3.5rem;flex-wrap:wrap;justify-content:center;}
+.stat{background:rgba(30,42,58,0.8);border:1px solid rgba(212,160,23,0.2);border-radius:14px;padding:18px 30px;text-align:center;transform:perspective(600px) rotateX(5deg);transition:transform 0.3s;backdrop-filter:blur(8px);}
+.stat:hover{transform:perspective(600px) rotateX(0deg) translateY(-5px);}
+.stat .n{font-size:2rem;font-weight:800;color:var(--gold2);}
+.stat .l{font-size:0.76rem;color:#94A3B8;letter-spacing:0.5px;margin-top:2px;}
+
+/* SECTIONS */
+section{position:relative;z-index:1;}
+.sec-label{text-align:center;font-size:0.76rem;font-weight:700;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;margin-bottom:0.6rem;}
+.sec-title{text-align:center;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:0.75rem;line-height:1.2;}
+.sec-title .hl{color:var(--gold2);}
+.sec-desc{text-align:center;color:#94A3B8;font-size:0.97rem;max-width:560px;margin:0 auto 3.5rem;line-height:1.75;}
+
+/* SERVICES */
+#services{padding:6rem 2rem;background:radial-gradient(ellipse at 50% 0%,rgba(26,110,191,0.07) 0%,transparent 70%);}
+.svc-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.75rem;}
+.svc-card{background:var(--dark3);border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:2rem 1.75rem;position:relative;overflow:hidden;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);cursor:default;}
+.svc-card::before{content:'';position:absolute;inset:0;border-radius:20px;background:linear-gradient(135deg,transparent 55%,rgba(212,160,23,0.06));opacity:0;transition:opacity 0.4s;}
+.svc-card:hover{transform:translateY(-9px) perspective(700px) rotateX(2deg);border-color:rgba(212,160,23,0.45);}
+.svc-card:hover::before{opacity:1;}
+.svc-glow{position:absolute;top:-50px;right:-50px;width:130px;height:130px;border-radius:50%;opacity:0;transition:opacity 0.4s;}
+.svc-card:hover .svc-glow{opacity:1;}
+.svc-icon{width:60px;height:60px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:1.25rem;position:relative;z-index:1;}
+.i-gst{background:rgba(37,137,232,0.15);border:1px solid rgba(37,137,232,0.3);}
+.i-tax{background:rgba(22,163,74,0.15);border:1px solid rgba(22,163,74,0.3);}
+.i-csc{background:rgba(212,160,23,0.15);border:1px solid rgba(212,160,23,0.3);}
+.i-pan{background:rgba(220,38,38,0.15);border:1px solid rgba(220,38,38,0.3);}
+.i-doc{background:rgba(124,58,237,0.15);border:1px solid rgba(124,58,237,0.3);}
+.i-biz{background:rgba(13,148,136,0.15);border:1px solid rgba(13,148,136,0.3);}
+.svc-card h3{font-size:1.18rem;font-weight:800;margin-bottom:0.5rem;}
+.svc-card p{color:#94A3B8;font-size:0.9rem;line-height:1.7;margin-bottom:1.25rem;}
+.tags{display:flex;flex-wrap:wrap;gap:6px;}
+.tag{font-size:0.71rem;font-weight:600;padding:4px 11px;border-radius:20px;background:rgba(255,255,255,0.05);color:#CBD5E1;border:1px solid rgba(255,255,255,0.1);}
+
+/* HOW */
+#how{padding:6rem 2rem;background:radial-gradient(ellipse at 0 50%,rgba(13,148,136,0.06) 0%,transparent 60%);}
+.timeline{max-width:780px;margin:0 auto;position:relative;}
+.timeline::before{content:'';position:absolute;left:34px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gold),var(--blue2),transparent);}
+.step{display:flex;gap:2rem;margin-bottom:2.5rem;align-items:flex-start;}
+.step-num{width:68px;height:68px;min-width:68px;background:linear-gradient(135deg,var(--gold),#B8860B);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:800;color:var(--dark);box-shadow:0 0 24px rgba(212,160,23,0.4);z-index:1;position:relative;}
+.step-content h4{font-size:1.1rem;font-weight:800;margin-bottom:0.4rem;}
+.step-content p{color:#94A3B8;font-size:0.92rem;line-height:1.7;}
+
+/* WHY */
+#why{padding:6rem 2rem;background:var(--dark2);}
+.why-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;}
+.why-card{text-align:center;padding:2rem 1.5rem;border-radius:16px;background:var(--dark3);border:1px solid rgba(255,255,255,0.06);transition:all 0.3s;}
+.why-card:hover{transform:translateY(-6px);border-color:rgba(212,160,23,0.35);}
+.why-icon{font-size:2.6rem;margin-bottom:1rem;display:block;}
+.why-card h4{font-size:1rem;font-weight:700;margin-bottom:0.5rem;}
+.why-card p{color:#94A3B8;font-size:0.87rem;line-height:1.65;}
+
+/* CONTACT */
+#contact{padding:6rem 2rem;background:radial-gradient(ellipse at 50% 100%,rgba(212,160,23,0.07) 0%,transparent 60%);}
+.contact-wrap{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+.cinfo h3{font-size:1.6rem;font-weight:800;margin-bottom:1rem;}
+.cinfo p{color:#94A3B8;font-size:0.95rem;line-height:1.75;margin-bottom:1.75rem;}
+.citem{display:flex;align-items:center;gap:14px;margin-bottom:1rem;padding:14px 18px;background:var(--dark3);border-radius:12px;border:1px solid rgba(255,255,255,0.06);}
+.citem-ico{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.citem-ico.p{background:rgba(34,197,94,0.15);}
+.citem-ico.m{background:rgba(37,137,232,0.15);}
+.citem-ico.l{background:rgba(212,160,23,0.15);}
+.citem small{display:block;font-size:0.7rem;color:#64748B;letter-spacing:0.5px;text-transform:uppercase;}
+.citem strong{font-size:0.95rem;font-weight:600;}
+.cform{background:var(--dark3);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:2.25rem;}
+.cform h4{font-size:1.15rem;font-weight:800;margin-bottom:1.5rem;}
+.fg{margin-bottom:1.1rem;}
+.fg label{display:block;font-size:0.8rem;font-weight:600;color:#94A3B8;margin-bottom:0.4rem;}
+.fg input,.fg select,.fg textarea{width:100%;padding:11px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:10px;color:var(--white);font-family:inherit;font-size:0.92rem;outline:none;transition:border-color 0.25s,background 0.25s;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);background:rgba(212,160,23,0.05);}
+.fg select option{background:var(--dark2);}
+.fg textarea{resize:vertical;min-height:88px;}
+.fsubmit{width:100%;background:linear-gradient(135deg,var(--gold),#B8860B);color:var(--dark);padding:13px;border-radius:10px;font-weight:800;font-size:1rem;border:none;cursor:pointer;transition:all 0.3s;box-shadow:0 6px 20px rgba(212,160,23,0.35);}
+.fsubmit:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(212,160,23,0.55);}
+
+/* FOOTER */
+footer{background:rgba(5,8,16,0.95);border-top:1px solid rgba(212,160,23,0.15);padding:2rem;text-align:center;}
+.fbrand{font-size:1.1rem;font-weight:800;margin-bottom:0.4rem;}
+.fbrand span{color:var(--gold);}
+footer p{color:#4B5563;font-size:0.82rem;}
+.fbot{margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.05);}
+
+/* WHATSAPP */
+.wa-fab{position:fixed;bottom:28px;right:28px;z-index:200;width:62px;height:62px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 24px rgba(37,211,102,0.5);animation:bouncefab 2.5s ease-in-out infinite;text-decoration:none;}
+.wa-fab:hover{animation:none;transform:scale(1.12);}
+@keyframes bouncefab{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
+
+@media(max-width:720px){.nav-links{display:none;}.contact-wrap{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+
+<nav>
+  <div class="logo">
+    <div class="logo-icon">ज</div>
+    <div class="logo-text">Abuzaidkhan <span>Jan Seva</span><small>GST • Tax • CSC Services</small></div>
+  </div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#how">Kaise Karen</a>
+    <a href="#why">Hamare Baare Mein</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">📞 Abhi Call Karein</button>
+</nav>
+
+<div class="ticker">
+  <div class="ticker-inner">🟢 GST Registration &amp; Filing &nbsp;|&nbsp; 📋 ITR Filing (Income Tax Return) &nbsp;|&nbsp; 🏛️ CSC Govt. Services &nbsp;|&nbsp; 🪪 PAN Card &nbsp;|&nbsp; 📜 Aadhar Services &nbsp;|&nbsp; 🏦 MSME Registration &nbsp;|&nbsp; 📑 Certificate Services &nbsp;|&nbsp; 💼 Digital Signature (DSC) &nbsp;|&nbsp; 🔐 Shop Act License &nbsp;&nbsp;&nbsp;&nbsp;</div>
+</div>
+
+<section class="hero">
+  <div class="badge">⭐ Vishwas ka Naam — Abuzaidkhan Jan Seva Kendra</div>
+  <h1>
+    <span class="line1">GST • Income Tax</span>
+    <span class="line2">CSC Services</span>
+  </h1>
+  <p class="hero-sub">Aapke <strong>sabhi sarkaari kaam</strong> ek hi jagah par — tez, sahi aur bilkul aasaan tarike se.<br>Ghar baithe online ya hamare kendra par aakar — dono taraf seva uplabdh hai.</p>
+  <div class="hero-btns">
+    <a href="#services" class="btn-gold">🔍 Services Dekhein</a>
+    <a href="#contact" class="btn-ghost">📝 Free Consultation</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="n">5000+</div><div class="l">Santusht Grahak</div></div>
+    <div class="stat"><div class="n">8+</div><div class="l">Saal ka Anubhav</div></div>
+    <div class="stat"><div class="n">100%</div><div class="l">Vishwasniy Seva</div></div>
+    <div class="stat"><div class="n">24h</div><div class="l">Tez Processing</div></div>
+  </div>
+</section>
+
+<section id="services">
+  <p class="sec-label">Hamaari Sevaayein</p>
+  <h2 class="sec-title">Sabhi Sarkaari Kaam — <span class="hl">Ek Hi Jagah</span></h2>
+  <p class="sec-desc">Professional aur anubhavi team ke saath aapka kaam hoga jaldi aur bilkul sahi tarike se.</p>
+  <div class="svc-grid">
+
+    <div class="svc-card">
+      <div class="svc-glow" style="background:radial-gradient(circle,rgba(37,137,232,0.2),transparent 70%);"></div>
+      <div class="svc-icon i-gst">📊</div>
+      <h3>GST Services</h3>
+      <p>GST Registration se lekar Monthly/Quarterly Returns filing tak — business ki zaroorat ke hisaab se poori madad karte hain.</p>
+      <div class="tags">
+        <span class="tag">GST Registration</span><span class="tag">GSTR-1 &amp; 3B</span><span class="tag">Annual Return</span><span class="tag">GST Notice Reply</span><span class="tag">E-Way Bill</span>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-glow" style="background:radial-gradient(circle,rgba(22,163,74,0.2),transparent 70%);"></div>
+      <div class="svc-icon i-tax">💰</div>
+      <h3>Income Tax Services</h3>
+      <p>ITR Filing, TDS Return aur Tax Planning ke saath aapka paisa bachaaein. Salaried se business income tak — sab handle karte hain.</p>
+      <div class="tags">
+        <span class="tag">ITR-1 to ITR-6</span><span class="tag">TDS Return</span><span class="tag">Form 16</span><span class="tag">Advance Tax</span><span class="tag">Tax Notice</span>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-glow" style="background:radial-gradient(circle,rgba(212,160,23,0.2),transparent 70%);"></div>
+      <div class="svc-icon i-csc">🏛️</div>
+      <h3>CSC Services</h3>
+      <p>Common Service Centre ke zariye sarkaari yojanaon ka laabh seedha aapke paas. Sarkaar ki saari online sevaayein ek jagah.</p>
+      <div class="tags">
+        <span class="tag">PM Kisan</span><span class="tag">Aadhar Update</span><span class="tag">Ration Card</span><span class="tag">Scholarship</span><span class="tag">Pensioner</span>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-glow" style="background:radial-gradient(circle,rgba(220,38,38,0.2),transparent 70%);"></div>
+      <div class="svc-icon i-pan">🪪</div>
+      <h3>PAN &amp; Aadhar Services</h3>
+      <p>Naya PAN Card apply karein, correction karein ya Aadhar se link karein. Jaldi processing aur doorstep delivery ka option bhi.</p>
+      <div class="tags">
+        <span class="tag">PAN Apply</span><span class="tag">PAN Correction</span><span class="tag">PAN-Aadhar Link</span><span class="tag">e-PAN</span>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-glow" style="background:radial-gradient(circle,rgba(124,58,237,0.2),transparent 70%);"></div>
+      <div class="svc-icon i-doc">📜</div>
+      <h3>Certificate Services</h3>
+      <p>Janam, niwas, aay, jaati praman patra aur anya sarkaari praman patr — sab kuch online apply karein aasani se.</p>
+      <div class="tags">
+        <span class="tag">Birth Certificate</span><span class="tag">Income Certificate</span><span class="tag">Domicile</span><span class="tag">Caste Certificate</span>
+      </div>
+    </div>
+
+    <div class="svc-card">
+      <div class="svc-glow" style="background:radial-gradient(circle,rgba(13,148,136,0.2),transparent 70%);"></div>
+      <div class="svc-icon i-biz">💼</div>
+      <h3>Business Registration</h3>
+      <p>MSME/Udyam Registration, Digital Signature, Shop Act aur Startup India registration ki poori suvidha ek hi jagah.</p>
+      <div class="tags">
+        <span class="tag">MSME / Udyam</span><span class="tag">Digital Signature</span><span class="tag">FSSAI License</span><span class="tag">Shop Act</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="how">
+  <p class="sec-label">Kaise Kaam Karta Hai</p>
+  <h2 class="sec-title">Sirf <span class="hl">4 Aasaan Kadam</span></h2>
+  <p class="sec-desc">Bina kisi pareshani ke aapka kaam hoga — bilkul simple process mein.</p>
+  <div class="timeline">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>📞 Sampark Karein</h4>
+        <p>Call, WhatsApp ya seedha hamare kendra aayein. Apni zaroorat bataaein — hum aapko sahi service guide karenge bilkul free mein.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>📁 Documents Dein</h4>
+        <p>Zaruri documents WhatsApp par bhejein ya kendra par laayein. Hum pehle se bata denge — aapko kya kya chahiye hoga.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>⚡ Kaam Hoga Tez</h4>
+        <p>Humari expert team aapka kaam professional tarike se process karti hai — bilkul sahi aur jaldi. Koi galati nahi.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h4>✅ Confirmation Paayein</h4>
+        <p>Kaam hone par WhatsApp ya SMS par confirmation aur acknowledgement number milta hai. Poori transparency ke saath.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <p class="sec-label">Kyun Chunein Humein</p>
+  <h2 class="sec-title">Hamaari <span class="hl">Khaasiyat</span></h2>
+  <p class="sec-desc">Hazaron grahak hampar bharosa karte hain — kyunki hum hamesha unka kaam pehle rakhte hain.</p>
+  <div class="why-grid">
+    <div class="why-card"><span class="why-icon">⚡</span><h4>Tez Processing</h4><p>Minimum time mein maximum result — aapka kaam hogi sabse pehli priority.</p></div>
+    <div class="why-card"><span class="why-icon">🔐</span><h4>100% Surakshit</h4><p>Aapke documents aur personal data bilkul safe — poori gupt rakhi jaati hai.</p></div>
+    <div class="why-card"><span class="why-icon">💸</span><h4>Uchit Shulk</h4><p>Transparent pricing — koi chhupa hua charge nahi. Pehle bataaenge, tab karenge.</p></div>
+    <div class="why-card"><span class="why-icon">🎓</span><h4>Expert Team</h4><p>8+ saal ka anubhav — CA, Tax Expert aur CSC operators ki trained team haazir hai.</p></div>
+    <div class="why-card"><span class="why-icon">📱</span><h4>WhatsApp Support</h4><p>Har kadam par update — WhatsApp par milti rehti hai poori jaankari real-time mein.</p></div>
+    <div class="why-card"><span class="why-icon">🌐</span><h4>Online &amp; Offline</h4><p>Ghar baithe online ya hamare kendra par aakar — dono taraf poori seva uplabdh.</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <p class="sec-label">Sampark Karein</p>
+  <h2 class="sec-title">Baat Karein <span class="hl">Abhi</span></h2>
+  <p class="sec-desc">Koi bhi sawaal ho — hum yahan hain. Free consultation ke liye aaj hi contact karein.</p>
+  <div class="contact-wrap">
+    <div class="cinfo">
+      <h3>Hamaara Kendra — Abuzaidkhan Jan Seva</h3>
+      <p>Aapki har zaroorat ke liye hamaari expert team taiyaar hai. Seedhe call karein ya form bharein — hum jald se jald jawab denge.</p>
+      <div class="citem"><div class="citem-ico p">📞</div><div><small>Call / WhatsApp</small><strong>+91 98910 95192</strong></div></div>
+      <div class="citem"><div class="citem-ico m">📧</div><div><small>Email</small><strong>abuzaidkhanamu@gmail.com</strong></div></div>
+      <div class="citem"><div class="citem-ico l">📍</div><div><small>Hamara Kendra</small><strong>A-74, A Block, Shalimar Garden, 201005</strong></div></div>
+      <div style="margin-top:1.5rem;padding:18px;background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.25);border-radius:12px;">
+        <p style="color:var(--gold2);font-weight:700;font-size:0.88rem;margin-bottom:0.3rem;">🕐 Kaam ka Samay</p>
+        <p style="color:#94A3B8;font-size:0.87rem;">Somwar – Shaniwar: Subah 9 baje – Shaam 7 baje<br>Ravivar: Subah 10 baje – Dopahar 2 baje</p>
+      </div>
+    </div>
+    <div class="cform">
+      <h4>🗒️ Free Consultation Form</h4>
+      <div class="fg"><label>Aapka Naam *</label><input type="text" placeholder="Apna poora naam likhein"/></div>
+      <div class="fg"><label>Mobile Number *</label><input type="tel" placeholder="+91 XXXXX XXXXX"/></div>
+      <div class="fg"><label>Aapko Kya Chahiye?</label>
+        <select>
+          <option value="">-- Service Chunein --</option>
+          <option>GST Registration</option>
+          <option>GST Filing (GSTR)</option>
+          <option>Income Tax Return (ITR)</option>
+          <option>PAN Card</option>
+          <option>CSC / Govt. Services</option>
+          <option>MSME / Udyam Registration</option>
+          <option>Certificate Services</option>
+          <option>Digital Signature (DSC)</option>
+          <option>Aur Kuch / Other</option>
+        </select>
+      </div>
+      <div class="fg"><label>Koi Sawaal ya Jaankari</label><textarea placeholder="Yahan apna sawaal likhein..."></textarea></div>
+      <button class="fsubmit" id="fsub" onclick="submitForm()">🚀 Submit Karein — Free Consultation</button>
+      <p style="font-size:0.74rem;color:#64748B;text-align:center;margin-top:0.75rem;">✅ Aapki jaankari bilkul surakshit hai — koi spam nahi</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fbrand">Abuzaidkhan <span>Jan Seva</span> Kendra</div>
+  <p>GST • Income Tax • CSC • PAN • Certificate • Business Registration</p>
+  <div class="fbot"><p>© 2024 Abuzaidkhan Jan Seva Kendra. Sabhi adhikar surakshit. &nbsp;|&nbsp; Made with ❤️ for India</p></div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/919891095192" target="_blank" title="WhatsApp par baat karein">
+  <svg width="34" height="34" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 3C9.4 3 4 8.4 4 15c0 2.6.8 5 2.2 7.1L4 29l7.2-2.2C13.1 28 14.5 28.4 16 28.4c6.6 0 12-5.4 12-12S22.6 3 16 3z" fill="white"/>
+    <path d="M21.8 19.1c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.4.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4-.1-.5-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5H11c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2 3 4.9 4.2 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 2-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z" fill="#25D366"/>
+  </svg>
+</a>
+
+<script>
+// STARFIELD
+const C=document.getElementById('starfield'),cx=C.getContext('2d');
+let stars=[];
+function rsz(){C.width=window.innerWidth;C.height=window.innerHeight;}
+function init(){stars=[];for(let i=0;i<200;i++)stars.push({x:Math.random()*C.width,y:Math.random()*C.height,r:Math.random()*1.5+0.2,a:Math.random()*0.7+0.15,s:Math.random()*0.25+0.04,t:Math.random()*Math.PI*2});}
+function draw(){cx.clearRect(0,0,C.width,C.height);stars.forEach(s=>{s.t+=0.018;const a=s.a*(0.55+0.45*Math.sin(s.t));cx.beginPath();cx.arc(s.x,s.y,s.r,0,Math.PI*2);cx.fillStyle=`rgba(190,210,255,${a})`;cx.fill();s.y+=s.s;if(s.y>C.height){s.y=0;s.x=Math.random()*C.width;}});requestAnimationFrame(draw);}
+window.addEventListener('resize',()=>{rsz();init();});rsz();init();draw();
+
+// SCROLL REVEAL
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:0.08});
+document.querySelectorAll('.svc-card,.why-card,.step').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(28px)';el.style.transition='opacity 0.6s ease,transform 0.6s ease';obs.observe(el);});
+
+// 3D TILT
+document.querySelectorAll('.svc-card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;
+    card.style.transform=`perspective(900px) rotateX(${-(y/r.height)*10}deg) rotateY(${(x/r.width)*10}deg) translateY(-9px)`;
+  });
+  card.addEventListener('mouseleave',()=>{card.style.transform='';});
+});
+
+function submitForm(){
+  const b=document.getElementById('fsub');
+  b.textContent='✅ Form Submit Ho Gaya! Jald Hi Call Aayegi...';
+  b.style.background='linear-gradient(135deg,#16A34A,#15803D)';
+  b.disabled=true;
+}
+</script>
+</body>
+</html>
