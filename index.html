@@ -380,6 +380,89 @@ function submitForm(){
   b.style.background='linear-gradient(135deg,#16A34A,#15803D)';
   b.disabled=true;
 }
-</script>
+</script><section id="appointment">
+  <p class="sec-label">Appointment Booking</p>
+  <h2 class="sec-title">📅 Appointment <span class="hl">Book Karein</span></h2>
+
+  <div class="cform" style="max-width:700px;margin:auto;">
+    <h4>Appointment Request</h4>
+
+    <div class="fg">
+      <label>Naam</label>
+      <input type="text" placeholder="Apna Naam">
+    </div>
+
+    <div class="fg">
+      <label>Mobile Number</label>
+      <input type="tel" placeholder="+91 XXXXX XXXXX">
+    </div>
+
+    <div class="fg">
+      <label>Date</label>
+      <input type="date">
+    </div>
+
+    <div class="fg">
+      <label>Time</label>
+      <input type="time">
+    </div>
+
+    <button class="fsubmit">
+      📅 Appointment Book Karein
+    </button>
+  </div>
+</section><section id="reviews">
+  <p class="sec-label">Customer Reviews</p>
+  <h2 class="sec-title">⭐ Grahakon Ki <span class="hl">Raay</span></h2>
+
+  <div class="why-grid">
+
+    <div class="why-card">
+      ⭐⭐⭐⭐⭐
+      <h4>Mohd Arif</h4>
+      <p>GST registration bahut jaldi ho gaya. Service excellent hai.</p>
+    </div>
+
+    <div class="why-card">
+      ⭐⭐⭐⭐⭐
+      <h4>Sana Khan</h4>
+      <p>ITR filing professional tarike se hui. Highly recommended.</p>
+    </div>
+
+    <div class="why-card">
+      ⭐⭐⭐⭐⭐
+      <h4>Rahul Sharma</h4>
+      <p>PAN card correction sirf 2 din me complete ho gaya.</p>
+    </div>
+
+  </div>
+</section><section id="location">
+  <p class="sec-label">Location</p>
+  <h2 class="sec-title">📍 Hamara <span class="hl">Office</span></h2>
+
+  <iframe
+    src="YOUR_MAP_LINK"
+    width="100%"
+    height="400"
+    style="border:none;border-radius:20px;">
+  </iframe>
+</section><a class="book-fab" href="#appointment">
+📅
+</a>.book-fab{
+position:fixed;
+bottom:105px;
+right:28px;
+width:60px;
+height:60px;
+border-radius:50%;
+background:#D4A017;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+text-decoration:none;
+z-index:999;
+box-shadow:0 6px 20px rgba(212,160,23,.4);
+}
 </body>
 </html>
